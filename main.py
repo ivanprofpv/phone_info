@@ -18,6 +18,7 @@ def create_db(cursor: sqlite3.Cursor):
     )
     ''')
 
+
 def get_card(cursor: sqlite3.Cursor, page_point=2):
     """
     Функция для вывода записей через пагинацию (2 записи на страницу с шагом 1)
@@ -46,6 +47,7 @@ def get_card(cursor: sqlite3.Cursor, page_point=2):
 
         page_num += 1
         offset += page_point
+
 
 def add_card(cursor: sqlite3.Cursor, name: str, patronymic: str,
              lastname: str, name_organization: str,
@@ -136,6 +138,7 @@ def search_card_for_lastname_and_organization(cursor: sqlite3.Cursor, lastname: 
     for part in results:
         print(part)
 
+
 def menu():
     """
     Цикл для выбора меню и последующая передача параметров в функции в зависимости
@@ -188,6 +191,7 @@ def menu():
     connection.commit()
 
     connection.close()
+
 
 if __name__ == "__main__":
     menu()
